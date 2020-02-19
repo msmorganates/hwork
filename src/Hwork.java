@@ -73,10 +73,7 @@ public class Hwork {
 	                
 	         
 	}
-
-
-	
-	
+		
 	public static void main(String[] args){
 		
 		
@@ -90,30 +87,9 @@ public class Hwork {
 			enterMatrixData(scan, matrix, i, j);
 			printMatrix(matrix, i, j);
 			printMatrixx(matrix, i, j);
-			
-			 
-			
-			
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
 	}
-	
-	
-	
-	
-	
 
 }
