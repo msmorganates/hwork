@@ -2,12 +2,16 @@ import java.util.Scanner;
 
 
 public class Hwork {
+	
+
 	public static int getrandom(int max, int min){
 	    int x = (int) ((Math.random()*((100)+1))+0);
 	    return x;
 	}
 	
-	public static void enterMatrixData(Scanner scan, int[][] matrix, int i, int j){
+	public static void enterMatrixData(Scanner scan, int[][] matrix){
+		int i = matrix.length;
+		int j = matrix[0].length;
 	     System.out.println(" ");
 	          
 	          for (int a = 0; a < i; a++)
@@ -18,7 +22,9 @@ public class Hwork {
 	              }
 	          }
 	  }
-	public static void printMatrix(int[][] matrix, int i, int j){
+	public static void printMatrix(int[][] matrix){
+		int i = matrix.length;
+		int j = matrix[0].length;
 	    System.out.println("Your Matrix is : ");
 	        
 	        for (int a = 0; a < i; a++)
@@ -31,10 +37,12 @@ public class Hwork {
 	            System.out.println();
 	        }
 	}
-	public static void printMatrixx(int[][] matrix, int i, int j){
+	public static int[][] changeMatrix(int[][] matrix, String control){
+		int i = matrix.length;
+		int j = matrix[0].length;
 	    System.out.println("Your New Matrix is : ");
 	        
-	            	if( i==j ) {
+	            	if( control.equals("evet")) {
 	    				for(int a = 0; a<i;a++) {
 	    					for (int b = 0; b < j; b++)
 	    		            {
@@ -46,9 +54,7 @@ public class Hwork {
 	    		                	matrix[a][b] = 0;
 	    		                    		
 	    		                }
-	    		                System.out.print(matrix[a][b]+"\t");
 	    		            }
-	    					 System.out.println();
 	    				}
 	    				
 	    			 }
@@ -64,31 +70,36 @@ public class Hwork {
 	    		                	matrix[a][b] = 0;
 	    		                    		
 	    		                }
-	    		                System.out.print(matrix[a][b]+"\t");
 	    		            }
-	    					 System.out.println();
 	    				}
 	            		
 	            	}
 	                
-	         
+	         return matrix;
 	}
 		
 	public static void main(String[] args){
 		
 		
 		Scanner scan = new Scanner(System.in);
+			
 			System.out.println("enter row number: "  );
 			int i = scan.nextInt();
 			System.out.println(" enter column number: ");			
 			int j = scan.nextInt();
+			scan.nextLine();
 			int[][] matrix = new int[i][j];
 			
-			enterMatrixData(scan, matrix, i, j);
-			printMatrix(matrix, i, j);
-			printMatrixx(matrix, i, j);
-		
-		
+			enterMatrixData(scan, matrix);
+			printMatrix(matrix);
+			
+			System.out.println("please type true or false: "  );
+			String control = scan.nextLine();
+			
+			System.out.println(control  );
+			
+			matrix = changeMatrix(matrix, control);
+			printMatrix(matrix);
 		
 	}
 
